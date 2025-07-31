@@ -10,8 +10,12 @@ This project utilizes the bikeshare python project from the earlier section in t
 The purpose of this git project is to simulate a real collaborative workspace.
 
 ### Files used
-Include the files used
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+The credit for bikeshare.py was provided in the python project submission and will be ommitted from this section.
+The credit for git solutions in this file is from the Udacity coursework.
 
