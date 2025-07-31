@@ -134,7 +134,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    #display total travel time in multiple time units
+    #display total travel time in seconds, minutes, hours, and days
     ttts = df['Trip Duration'].sum()
     tttm = ttts/60
     ttth = ttts/3600
@@ -142,7 +142,7 @@ def trip_duration_stats(df):
     
     print(f"Total travel time:\n {ttts:,} seconds\n {tttm:,} minutes\n {ttth:,} hours\n {tttd:,} days")
     
-    #display mean travel time in multiple time units
+    #display mean travel time in seconds, minutes, hours, and days
     avg_tts = df['Trip Duration'].mean()
     avg_ttm = avg_tts/60
     avg_tth = avg_tts/3600
@@ -150,7 +150,7 @@ def trip_duration_stats(df):
     
     print(f"\nAverage travel time:\n {avg_tts:,} seconds\n {avg_ttm:,} minutes\n {avg_tth:,} hours\n {avg_ttd:,} days")
 
-    #display median travel time in multiple time units
+    #display median travel time in seconds, minutes, hours, and days
     med_tts = df['Trip Duration'].median()
     med_ttm = med_tts/60
     med_tth = med_tts/3600
@@ -158,7 +158,7 @@ def trip_duration_stats(df):
     
     print(f"\nMedian travel time:\n {med_tts:,} seconds\n {med_ttm:,} minutes\n {med_tth:,} hours\n {med_ttd:,} days")
     
-    #display mode travel time in multiple time units
+    #display mode travel time in seconds, minutes, hours, and days
     mode_tts = df['Trip Duration'].mode()[0]
     mode_ttm = mode_tts/60
     mode_tth = mode_tts/3600
