@@ -200,24 +200,17 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-#provide user with their selections
 def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        print(f"\nYou have selected:\n"
-              f" City  : {city.title()}\n"
-              f" Month : {month.title()}\n"
-              f" Day   : {day.title()}\n")
-        print('-'*40)
-        
         time_stats(df, month, day)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
 
-        #raw data view option
+    #raw data view option
         row_start = 0
         show_data = input("Would you like to see 5 rows of raw data? Enter yes or type anything else to signal no: ").strip().lower()
         while show_data == 'yes' and row_start < len(df):
