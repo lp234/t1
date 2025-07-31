@@ -157,15 +157,7 @@ def trip_duration_stats(df):
     med_ttd = med_tts/86400
     
     print(f"\nMedian travel time:\n {med_tts:,} seconds\n {med_ttm:,} minutes\n {med_tth:,} hours\n {med_ttd:,} days")
-    
-    #display mode travel time in multiple time units
-    mode_tts = df['Trip Duration'].mode()[0]
-    mode_ttm = mode_tts/60
-    mode_tth = mode_tts/3600
-    mode_ttd = mode_tts/86400
-    
-    print(f"\nMode travel time:\n {mode_tts:,} seconds\n {mode_ttm:,} minutes\n {mode_tth:,} hours\n {mode_ttd:,} days")
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
