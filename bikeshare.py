@@ -157,15 +157,7 @@ def trip_duration_stats(df):
     med_ttd = med_tts/86400
     
     print(f"\nMedian travel time:\n {med_tts:,} seconds\n {med_ttm:,} minutes\n {med_tth:,} hours\n {med_ttd:,} days")
-    
-    #display mode travel time in seconds, minutes, hours, and days
-    mode_tts = df['Trip Duration'].mode()[0]
-    mode_ttm = mode_tts/60
-    mode_tth = mode_tts/3600
-    mode_ttd = mode_tts/86400
-    
-    print(f"\nMode travel time:\n {mode_tts:,} seconds\n {mode_ttm:,} minutes\n {mode_tth:,} hours\n {mode_ttd:,} days")
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -203,29 +195,22 @@ def user_stats(df):
         print(f"Most recent     {recent}")
         print(f"Most common     {common}")   
     else:
-        print("\nBirth year data not available for this city.")
+        print("\nBirth year data not available for Washington, please select Chicago or New York City to view birth year data.")
                
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-#provide user with their selections
 def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        print(f"\nYou have selected:\n"
-              f" City  : {city.title()}\n"
-              f" Month : {month.title()}\n"
-              f" Day   : {day.title()}\n")
-        print('-'*40)
-        
         time_stats(df, month, day)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
 
-        #raw data view option
+    #raw data view option
         row_start = 0
         show_data = input("Would you like to see 5 rows of raw data? Enter yes or type anything else to signal no: ").strip().lower()
         while show_data == 'yes' and row_start < len(df):
