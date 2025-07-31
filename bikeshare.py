@@ -203,7 +203,7 @@ def user_stats(df):
         print(f"Most recent     {recent}")
         print(f"Most common     {common}")   
     else:
-        print("\nBirth year data not available for this city.")
+        print("\nBirth year data not available for Washington, please select Chicago or New York City to view birth year data.")
                
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
